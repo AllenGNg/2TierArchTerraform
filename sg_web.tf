@@ -42,4 +42,11 @@ resource "aws_security_group" "mysg" {
       protocol = "tcp"
       cidr_blocks = ["${var.home_ip}"]
   }
+
+  egress {
+      from_port = 0
+      to_port = 65535
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+  }
 }
